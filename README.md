@@ -67,3 +67,10 @@
   {
     "message": "OK"
   }
+
+# Запуск проекта:
+
+- copy example_env .env
+- docker-compose build
+- docker-compose up -d
+- в Docker file изменить environment для db
