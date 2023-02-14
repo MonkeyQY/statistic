@@ -49,9 +49,7 @@ def calculate_average_value(
         statistic: SaveStatistic,
 ) -> tuple[Optional[float], Optional[float]]:
     if statistic.clicks is None or statistic.cost is None or statistic.views is None:
-        cpc = None
-        cpm = None
-        return cpc, cpm
+        return None, None
     else:
         return calculate_average_amount_click(
             statistic.cost, statistic.clicks
