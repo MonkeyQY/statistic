@@ -1,0 +1,11 @@
+.env
+.idea
+**.json
+*__pycache__/
+*.egg-info
+*.egg
+*.egg-link
+*.DS_Store
+**.log
+*venv
+*alembic.ini

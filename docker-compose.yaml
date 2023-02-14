@@ -1,0 +1,30 @@
+
+
+version: "3.11"
+services:
+
+  statistic:
+    build: .statistic
+    restart: always
+    command: bash -c "python3 -m app"
+    env_file:
+      - .statistic/.env
+    depends_on:
+      - db
+
+  # database service
+  db:
+    container_name: "postgres"
+    image: postgres:14.0
+    restart: always
+    ports:
+      - "127.0.0.1:7543:5433"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=statistic
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

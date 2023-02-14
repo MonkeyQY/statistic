@@ -1,0 +1,12 @@
+HOST=http://localhost:5000
+PORT=5000
+
+get_statistic_path=/statistic/get
+save_statistic_path=/statistic/save
+delete_statistic_path=/statistic/delete
+
+DB_NAME=db_name
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=127.0.0.1
+DB_PORT=5432
