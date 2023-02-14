@@ -65,7 +65,7 @@ async def startup_event() -> None:
 
 @app.on_event("shutdown")
 async def shutdown_event() -> None:
-    await database.connect()
+    await database.disconnect()
     log.info("Database disconnected")
 
 
