@@ -19,7 +19,6 @@
 - /api/v1/statistic/save - POST запрос, сохраняет статистику в БД
   - Принимает json вида:
   {
-    "user_id": 1,
     "date": {
         "year": 2020,
         "month": 1,
