@@ -38,7 +38,6 @@
 - /api/v1/statistic/get - POST запрос, возвращает статистику из БД
   - Принимает json вида:
   {
-    "user_id": 1,
     "date": {
         "year": 2020,
         "month": 1,
