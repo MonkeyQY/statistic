@@ -67,7 +67,7 @@
   }
 
 # Запуск проекта:
-- в Docker file изменить environment для db
+- в docker-compose изменить environment для вашей db
 - copy example_env .env
 - docker-compose build
 - docker-compose up -d
