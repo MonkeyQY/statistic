@@ -3,6 +3,8 @@ from typing import Optional
 
 from pydantic import BaseModel
 
+from app.db.sort_methods import SortMethods
+
 
 class Statistic(BaseModel):
     date: datetime
@@ -11,6 +13,10 @@ class Statistic(BaseModel):
     cost: Optional[float]
     cpc: Optional[float]
     cpm: Optional[float]
+
+
+class Statistics(BaseModel):
+    statistics: list[Statistic]
 
 
 class SaveStatistic(BaseModel):
@@ -37,20 +43,20 @@ class SaveStatisticResponse(BaseModel):
 class GetStatistic(BaseModel):
     date_from: dict
     date_to: dict
-    sort_method: Optional[str]
+    sort_method: Optional[SortMethods]
 
     class Config:
         schema_extra = {
             "example": {
                 "date_from": {"year": 2021, "month": 1, "day": 1},
                 "date_to": {"year": 2021, "month": 1, "day": 1},
-                "sort_method": "views",
+                "sort_method": SortMethods.views,
             }
         }
 
 
 class GetStatisticResponse(BaseModel):
-    statistics: list[Statistic]
+    statistics: Statistics
 
     class Config:
         schema_extra = {

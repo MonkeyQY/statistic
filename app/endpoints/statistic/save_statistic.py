@@ -16,8 +16,8 @@ log = logging.getLogger("save statistic")
 
 @router.post(config.save_statistic_path)
 async def save_statistic(
-        saving_statistic: SaveStatistic,
-        statistic_repository: StatisticRepository = Depends(get_statistic_repository),
+    saving_statistic: SaveStatistic,
+    statistic_repository: StatisticRepository = Depends(get_statistic_repository),
 ) -> SaveStatisticResponse:
     log.info("Save statistic")
     statistic = prepare_statistic(saving_statistic)
@@ -46,7 +46,7 @@ def prepare_statistic(saving_statistic: SaveStatistic) -> Statistic:
 
 
 def calculate_average_value(
-        statistic: SaveStatistic,
+    statistic: SaveStatistic,
 ) -> tuple[Optional[float], Optional[float]]:
     if statistic.clicks is None or statistic.cost is None or statistic.views is None:
         cpc = None

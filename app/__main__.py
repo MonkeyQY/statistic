@@ -9,7 +9,7 @@ from app.endpoints.statistic.save_statistic import router as save_statistic_rout
 from app.endpoints.statistic.delete_statistic import router as delete_statistic_router
 from app.endpoints.statistic.get_statistic import router as get_statistic_router
 
-from app import config
+import config
 from app.db import database
 
 host = config.host

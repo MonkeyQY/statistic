@@ -19,7 +19,6 @@ async def get_statistic(
     statistic_repository: StatisticRepository = Depends(get_statistic_repository),
 ) -> GetStatisticResponse:
     log.info("Get statistic")
-
     date_from = datetime(
         date.date_from["year"], date.date_from["month"], date.date_from["day"]
     )
